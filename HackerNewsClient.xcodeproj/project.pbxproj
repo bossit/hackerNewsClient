@@ -60,14 +60,22 @@
 			children = (
 				2786962F2459A5BA00FD87B5 /* AppDelegate.swift */,
 				278696312459A5BA00FD87B5 /* SceneDelegate.swift */,
-				278696332459A5BA00FD87B5 /* FirstViewController.swift */,
-				278696352459A5BA00FD87B5 /* SecondViewController.swift */,
+				278696452459A7BD00FD87B5 /* Views */,
 				278696372459A5BA00FD87B5 /* Main.storyboard */,
 				2786963A2459A5BA00FD87B5 /* Assets.xcassets */,
 				2786963C2459A5BA00FD87B5 /* LaunchScreen.storyboard */,
 				2786963F2459A5BA00FD87B5 /* Info.plist */,
 			);
 			path = HackerNewsClient;
+			sourceTree = "<group>";
+		};
+		278696452459A7BD00FD87B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				278696332459A5BA00FD87B5 /* FirstViewController.swift */,
+				278696352459A5BA00FD87B5 /* SecondViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYNZ8D99K9;
 				INFOPLIST_FILE = HackerNewsClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYNZ8D99K9;
 				INFOPLIST_FILE = HackerNewsClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
