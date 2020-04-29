@@ -1,5 +1,5 @@
 //
-//  Color.swift
+//  News.swift
 //  HackerNewsClient
 //
 //  Created by Dinar Mukhametshin on 29.04.2020.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct News {
+    let title: String
+}
