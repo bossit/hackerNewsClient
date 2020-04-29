@@ -17,4 +17,8 @@ struct Constants {
     struct Cells {
         static let newsItem = "NewsItemCell"
     }
+    
+    struct ApiGateway {
+        static let bestStories = "https://hacker-news.firebaseio.com/v0/beststories.json"
+    }
 }
