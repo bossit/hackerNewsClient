@@ -11,4 +11,6 @@ import Foundation
 struct Story: Decodable {
     let title: String
     let url: URL?
+    let by: String
+    let score: Int
 }

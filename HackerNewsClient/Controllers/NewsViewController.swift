@@ -10,8 +10,7 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
-    var newsArray = [Story]()
-    var storyIds: [Int] = []
+    var storiesArray = [Story]()
     var storyManager = StoryManager()
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +21,7 @@ class NewsViewController: UIViewController {
         storyManager.delegate = self
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: Constants.Nibs.news, bundle: nil), forCellReuseIdentifier: Constants.Cells.newsItem)
         
         storyManager.fetchData()
@@ -29,27 +29,27 @@ class NewsViewController: UIViewController {
 }
 
 
-extension NewsViewController: UITableViewDataSource {
+extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let news = newsArray[indexPath.row]
+        let news = storiesArray[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.newsItem, for: indexPath) as! NewsCell
         cell.title?.text = news.title
+        cell.tooltip?.text = "\(news.score) points by \(news.by)"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsArray.count
+        return storiesArray.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+//        let selectedStory = storiesArray[indexPath.row]
         
-//        let news = newsArray[indexPath.row]
+        
     }
 }
-
 
 extension NewsViewController: StoryManagerDelegate {
     func didFailRequest(error: Error) {
@@ -57,7 +57,7 @@ extension NewsViewController: StoryManagerDelegate {
     }
     
     func didUpdateTableView(_ storyManager: StoryManager, story: Story) {
-        newsArray.append(story)
+        storiesArray.append(story)
         
         tableView.reloadData()
     }
