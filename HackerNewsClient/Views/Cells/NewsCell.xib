@@ -9,38 +9,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewsItemCell" rowHeight="60" id="KGk-i7-Jjw" customClass="NewsCell" customModule="HackerNewsClient" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewsItemCell" rowHeight="40" id="KGk-i7-Jjw" customClass="NewsCell" customModule="HackerNewsClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="293" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="293" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UbJ-ru-J7G">
-                        <rect key="frame" x="16" y="10" width="267" height="40"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gDI-eO-jvO">
+                        <rect key="frame" x="16" y="8" width="267" height="34.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wov-hb-8P9">
-                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="0.0" y="0.0" width="267" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSl-PC-c7N">
-                                <rect key="frame" x="0.0" y="24" width="33" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="0.0" y="20" width="267" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.36470588240000001" green="0.35686274509999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="UbJ-ru-J7G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5Gd-0c-sob"/>
-                    <constraint firstItem="UbJ-ru-J7G" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CNq-8k-LcP"/>
-                    <constraint firstAttribute="trailing" secondItem="UbJ-ru-J7G" secondAttribute="trailing" constant="10" id="E0c-3P-9qN"/>
-                    <constraint firstItem="UbJ-ru-J7G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jlR-gS-xAG"/>
-                    <constraint firstAttribute="bottom" secondItem="UbJ-ru-J7G" secondAttribute="bottom" constant="10" id="pbQ-i9-j2y"/>
+                    <constraint firstAttribute="trailing" secondItem="gDI-eO-jvO" secondAttribute="trailing" constant="10" id="Sci-pQ-1An"/>
+                    <constraint firstItem="gDI-eO-jvO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Whn-YP-lUV"/>
+                    <constraint firstItem="gDI-eO-jvO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="x4w-gc-C0r"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -48,7 +46,7 @@
                 <outlet property="title" destination="Wov-hb-8P9" id="AQJ-my-ajl"/>
                 <outlet property="tooltip" destination="jSl-PC-c7N" id="3ae-zX-WO3"/>
             </connections>
-            <point key="canvasLocation" x="121.73913043478262" y="158.03571428571428"/>
+            <point key="canvasLocation" x="121.73913043478262" y="154.6875"/>
         </tableViewCell>
     </objects>
 </document>
