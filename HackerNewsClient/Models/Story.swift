@@ -13,4 +13,5 @@ struct Story: Decodable {
     let url: String?
     let by: String
     let score: Int
+    let type: String
 }

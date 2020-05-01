@@ -67,7 +67,9 @@ struct StoryManager {
                             let story = try decoder.decode(Story.self, from: safeData)
                             
                             DispatchQueue.main.async {
-                                self.delegate?.didUpdateTableView(self, story: story)
+                                if story.type == "story" {
+                                    self.delegate?.didUpdateTableView(self, story: story)
+                                }
                             }
                             
                         } catch {
