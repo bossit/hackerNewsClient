@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, SFSafariViewControllerDelegate {
     
     var storiesArray = [Story]()
     var storyManager = StoryManager()
@@ -31,11 +32,11 @@ class NewsViewController: UIViewController {
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let news = storiesArray[indexPath.row]
+        let story = storiesArray[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.newsItem, for: indexPath) as! NewsCell
-        cell.title?.text = news.title
-        cell.tooltip?.text = "\(news.score) points by \(news.by)"
+        cell.title?.text = story.title
+        cell.tooltip?.text = "\(story.score) points by \(story.by)"
         
         return cell
     }
@@ -45,9 +46,13 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedStory = storiesArray[indexPath.row]
+        let story = storiesArray[indexPath.row]
         
-        
+        if let url = story.url {
+          let webViewController = SFSafariViewController(url: URL(string: url)!)
+          webViewController.delegate = self
+          present(webViewController, animated: true, completion: nil)
+        }
     }
 }
 
