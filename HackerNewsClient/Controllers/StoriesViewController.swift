@@ -23,7 +23,7 @@ class StoriesViewController: UIViewController, SFSafariViewControllerDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: Constants.Nibs.news, bundle: nil), forCellReuseIdentifier: Constants.Cells.newsItem)
+        tableView.register(UINib(nibName: Constants.Nibs.story, bundle: nil), forCellReuseIdentifier: Constants.Cells.story)
         
         storyManager.fetchData()
     }
@@ -34,7 +34,7 @@ extension StoriesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let story = storiesArray[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.newsItem, for: indexPath) as! StoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.story, for: indexPath) as! StoryCell
         cell.title?.text = story.title
         cell.tooltip?.text = "\(story.score) points by \(story.by)"
         

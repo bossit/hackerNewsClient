@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsCell: UITableViewCell {
+class StoryCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var tooltip: UILabel!

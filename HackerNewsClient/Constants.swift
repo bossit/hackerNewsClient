@@ -11,11 +11,11 @@ import Foundation
 struct Constants {
     
     struct Nibs {
-        static let news = "NewsCell"
+        static let story = "StoryCell"
     }
     
     struct Cells {
-        static let newsItem = "NewsItemCell"
+        static let story = "StoryItemCell"
     }
     
     struct ApiGateway {
