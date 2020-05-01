@@ -14,6 +14,8 @@ class StoriesViewController: UIViewController, SFSafariViewControllerDelegate {
     var storiesArray = [Story]()
     var storyManager = StoryManager()
     
+    let refreshControl = UIRefreshControl()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,8 +26,19 @@ class StoriesViewController: UIViewController, SFSafariViewControllerDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: Constants.Nibs.story, bundle: nil), forCellReuseIdentifier: Constants.Cells.story)
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshControlData(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
         
         storyManager.fetchIds()
+    }
+    
+    @objc private func refreshControlData(_ sender: Any) {
+        storyManager.fetchIds()
+        
+        DispatchQueue.main.async() {
+            self.refreshControl.endRefreshing()
+        }
     }
 }
 
