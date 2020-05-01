@@ -13,15 +13,11 @@ protocol StoryManagerDelegate {
     func didFailRequest(error: Error)
 }
 
-struct StoryManager {
+struct StoryManager: ApiProtocol {
     var delegate: StoryManagerDelegate?
     
-    func fetchData() {
-        fetchStoriesIds()
-    }
-    
-    private func fetchStoriesIds() {
-        if let url = URL(string: Constants.ApiGateway.bestStories) {
+    func fetchIds() {
+        if let url = URL(string: Constants.ApiGateway.stories) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -36,7 +32,7 @@ struct StoryManager {
                         let storiesIds = try decoder.decode(Array<Int>.self, from: safeData)
                         
                         DispatchQueue.main.async {
-                            self.fetchStories(storiesIds)
+                            self.fetchData(storiesIds)
                         }
                         
                     } catch {
@@ -49,8 +45,7 @@ struct StoryManager {
         }
     }
     
-    private func fetchStories(_ ids: [Int]) {
-        
+    func fetchData(_ ids: [Int]) {
         for storyId in ids {
             if let url = URL(string: "https://hacker-news.firebaseio.com/v0/item/\(storyId).json") {
                 let session = URLSession(configuration: .default)

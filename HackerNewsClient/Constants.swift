@@ -19,6 +19,7 @@ struct Constants {
     }
     
     struct ApiGateway {
-        static let bestStories = "https://hacker-news.firebaseio.com/v0/beststories.json"
+        static let stories = "https://hacker-news.firebaseio.com/v0/beststories.json"
+        static let jobs = "https://hacker-news.firebaseio.com/v0/jobstories.json"
     }
 }

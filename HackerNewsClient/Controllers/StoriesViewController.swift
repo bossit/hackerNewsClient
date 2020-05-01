@@ -25,7 +25,7 @@ class StoriesViewController: UIViewController, SFSafariViewControllerDelegate {
         tableView.delegate = self
         tableView.register(UINib(nibName: Constants.Nibs.story, bundle: nil), forCellReuseIdentifier: Constants.Cells.story)
         
-        storyManager.fetchData()
+        storyManager.fetchIds()
     }
 }
 
